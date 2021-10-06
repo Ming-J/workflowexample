@@ -9,6 +9,8 @@ on:
     types: [opened]
   pull_request_review_comment:
     types: [created]
+  issue_comment:
+    types: [created]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -41,3 +43,6 @@ jobs:
       - name: run show testNg
         if: contains(github.event.comment.body, 'testng')
         run: echo testng
+      - name: run issue
+        if: contains(github.event.comment.html_url, '/pull/')
+        run: echo pull issue
