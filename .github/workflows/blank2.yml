@@ -27,5 +27,6 @@ jobs:
       - name: Run a one-line script
         run: echo github.event
         
-      - if: contains(github.event.comment.body, 'testng')
+      - name: run show testNg
+        if: contains(github.event.comment.body, 'testng')
         run: echo testng
