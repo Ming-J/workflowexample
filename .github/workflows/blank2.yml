@@ -27,6 +27,11 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+      
+      - name: run github event
+        env:
+          GITHUB_EVENT: ${{ toJSON(github.event) }}
+        run: echo "$GITHUB_EVENT"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
