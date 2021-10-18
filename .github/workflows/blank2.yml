@@ -26,6 +26,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      - name: run github workspace
+        run: echo $GITHUB_WORKSPACE
+      
       - name: Run github context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
